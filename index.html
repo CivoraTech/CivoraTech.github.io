@@ -1231,82 +1231,82 @@
         // Set initial cursor style
         teamCarousel.style.cursor = 'grab';
 
-        // Disable right-click (context menu)
-        document.addEventListener('contextmenu', (e) => {
-            e.preventDefault();
-            return false;
-        });
+        // // Disable right-click (context menu)
+        // document.addEventListener('contextmenu', (e) => {
+        //     e.preventDefault();
+        //     return false;
+        // });
 
-        // Disable text selection
-        document.addEventListener('selectstart', (e) => {
-            e.preventDefault();
-            return false;
-        });
+        // // Disable text selection
+        // document.addEventListener('selectstart', (e) => {
+        //     e.preventDefault();
+        //     return false;
+        // });
 
-        // Disable copy
-        document.addEventListener('copy', (e) => {
-            e.preventDefault();
-            return false;
-        });
+        // // Disable copy
+        // document.addEventListener('copy', (e) => {
+        //     e.preventDefault();
+        //     return false;
+        // });
 
-        // Disable cut
-        document.addEventListener('cut', (e) => {
-            e.preventDefault();
-            return false;
-        });
+        // // Disable cut
+        // document.addEventListener('cut', (e) => {
+        //     e.preventDefault();
+        //     return false;
+        // });
 
-        // Disable keyboard shortcuts for inspect element and view source
-        document.addEventListener('keydown', (e) => {
-            // F12 (Inspect)
-            if (e.key === 'F12') {
-                e.preventDefault();
-                return false;
-            }
+        // // Disable keyboard shortcuts for inspect element and view source
+        // document.addEventListener('keydown', (e) => {
+        //     // F12 (Inspect)
+        //     if (e.key === 'F12') {
+        //         e.preventDefault();
+        //         return false;
+        //     }
             
-            // Ctrl+Shift+I (Inspect)
-            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-                e.preventDefault();
-                return false;
-            }
+        //     // Ctrl+Shift+I (Inspect)
+        //     if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+        //         e.preventDefault();
+        //         return false;
+        //     }
             
-            // Ctrl+Shift+J (Console)
-            if (e.ctrlKey && e.shiftKey && e.key === 'J') {
-                e.preventDefault();
-                return false;
-            }
+        //     // Ctrl+Shift+J (Console)
+        //     if (e.ctrlKey && e.shiftKey && e.key === 'J') {
+        //         e.preventDefault();
+        //         return false;
+        //     }
             
-            // Ctrl+U (View Source)
-            if (e.ctrlKey && e.key === 'u') {
-                e.preventDefault();
-                return false;
-            }
+        //     // Ctrl+U (View Source)
+        //     if (e.ctrlKey && e.key === 'u') {
+        //         e.preventDefault();
+        //         return false;
+        //     }
             
-            // Ctrl+Shift+C (Inspect Element)
-            if (e.ctrlKey && e.shiftKey && e.key === 'C') {
-                e.preventDefault();
-                return false;
-            }
+        //     // Ctrl+Shift+C (Inspect Element)
+        //     if (e.ctrlKey && e.shiftKey && e.key === 'C') {
+        //         e.preventDefault();
+        //         return false;
+        //     }
             
-            // Ctrl+C (Copy)
-            if (e.ctrlKey && e.key === 'c') {
-                e.preventDefault();
-                return false;
-            }
+        //     // Ctrl+C (Copy)
+        //     if (e.ctrlKey && e.key === 'c') {
+        //         e.preventDefault();
+        //         return false;
+        //     }
             
-            // Ctrl+A (Select All)
-            if (e.ctrlKey && e.key === 'a') {
-                e.preventDefault();
-                return false;
-            }
+        //     // Ctrl+A (Select All)
+        //     if (e.ctrlKey && e.key === 'a') {
+        //         e.preventDefault();
+        //         return false;
+        //     }
             
-            // Ctrl+X (Cut)
-            if (e.ctrlKey && e.key === 'x') {
-                e.preventDefault();
-                return false;
-            }
-        });
+        //     // Ctrl+X (Cut)
+        //     if (e.ctrlKey && e.key === 'x') {
+        //         e.preventDefault();
+        //         return false;
+        //     }
+        // });
 
-        // Detect if DevTools is open (basic detection)
+        // //Detect if DevTools is open (basic detection)
         // const devtoolsDetector = () => {
         //     const threshold = 160;
         //     const widthThreshold = window.outerWidth - window.innerWidth > threshold;
@@ -1317,14 +1317,14 @@
         //     }
         // };
 
-        // Check periodically
-        setInterval(devtoolsDetector, 1000);
+        // // Check periodically
+        // setInterval(devtoolsDetector, 1000);
 
-        // Disable drag and drop
-        document.addEventListener('dragstart', (e) => {
-            e.preventDefault();
-            return false;
-        });
+        // // Disable drag and drop
+        // document.addEventListener('dragstart', (e) => {
+        //     e.preventDefault();
+        //     return false;
+        // });
 
         // Scroll Animation Observer
         const observerOptions = {
