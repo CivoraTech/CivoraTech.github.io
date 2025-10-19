@@ -418,7 +418,6 @@
         .powered-by-section {
             background-color: white;
             padding: 2rem 0;
-            margin-top: 3rem;
         }
         
         .powered-by-section .powered-logo {
@@ -922,6 +921,345 @@
             position: relative;
             z-index: 1;
         }
+        
+        /* Floating Particles */
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 2;
+            pointer-events: none;
+        }
+        
+        .particle {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.6);
+            border-radius: 50%;
+            animation: floatParticle linear infinite;
+            pointer-events: none;
+        }
+        
+        .particle.tech-icon {
+            background: none;
+            border-radius: 0;
+            color: rgba(255, 255, 255, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .particle:nth-child(1) {
+            left: 10%;
+            width: 4px;
+            height: 4px;
+            animation-duration: 15s;
+            animation-delay: 0s;
+        }
+        
+        .particle:nth-child(2) {
+            left: 20%;
+            width: 6px;
+            height: 6px;
+            animation-duration: 18s;
+            animation-delay: 2s;
+        }
+        
+        .particle:nth-child(3) {
+            left: 30%;
+            width: 3px;
+            height: 3px;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+        
+        .particle:nth-child(4) {
+            left: 40%;
+            width: 5px;
+            height: 5px;
+            animation-duration: 20s;
+            animation-delay: 3s;
+        }
+        
+        .particle:nth-child(5) {
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            animation-duration: 16s;
+            animation-delay: 0.5s;
+        }
+        
+        .particle:nth-child(6) {
+            left: 60%;
+            width: 7px;
+            height: 7px;
+            animation-duration: 14s;
+            animation-delay: 2.5s;
+        }
+        
+        .particle:nth-child(7) {
+            left: 70%;
+            width: 3px;
+            height: 3px;
+            animation-duration: 22s;
+            animation-delay: 1.5s;
+        }
+        
+        .particle:nth-child(8) {
+            left: 80%;
+            width: 5px;
+            height: 5px;
+            animation-duration: 17s;
+            animation-delay: 4s;
+        }
+        
+        .particle:nth-child(9) {
+            left: 90%;
+            width: 4px;
+            height: 4px;
+            animation-duration: 19s;
+            animation-delay: 0.8s;
+        }
+        
+        .particle:nth-child(10) {
+            left: 15%;
+            width: 6px;
+            height: 6px;
+            animation-duration: 21s;
+            animation-delay: 3.5s;
+        }
+        
+        /* Tech icon particles */
+        .particle.tech-icon:nth-child(11) {
+            left: 25%;
+            width: 20px;
+            height: 20px;
+            animation-duration: 25s;
+            animation-delay: 2s;
+        }
+        
+        .particle.tech-icon:nth-child(12) {
+            left: 75%;
+            width: 24px;
+            height: 24px;
+            animation-duration: 28s;
+            animation-delay: 5s;
+        }
+        
+        .particle.tech-icon:nth-child(13) {
+            left: 35%;
+            width: 18px;
+            height: 18px;
+            animation-duration: 30s;
+            animation-delay: 1s;
+        }
+        
+        @keyframes floatParticle {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Interactive particles - slightly different behavior */
+        .particle.interactive {
+            animation-name: floatParticleInteractive;
+        }
+        
+        @keyframes floatParticleInteractive {
+            0% {
+                transform: translateY(100vh) rotate(0deg) scale(1);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.8;
+            }
+            50% {
+                transform: translateY(50vh) rotate(180deg) scale(1.2);
+                opacity: 1;
+            }
+            90% {
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg) scale(0.8);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .particle.tech-icon {
+                width: 16px !important;
+                height: 16px !important;
+            }
+            
+            .particle:not(.tech-icon) {
+                width: 3px !important;
+                height: 3px !important;
+            }
+        }
+        
+        /* Floating Action Buttons */
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 1000;
+        }
+        
+        .floating-btn {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            backdrop-filter: blur(10px);
+            transform: translateY(0);
+        }
+        
+        .floating-btn:hover {
+            transform: translateY(-4px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+        }
+        
+        .floating-btn:active {
+            transform: translateY(-2px) scale(1.05);
+        }
+        
+        /* Scroll to Top Button */
+        .scroll-top-btn {
+            background: linear-gradient(135deg, #07964c, #19248d);
+            color: white;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .scroll-top-btn.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top-btn:hover {
+            background: linear-gradient(135deg, #0a7d42, #1a1f7a);
+        }
+        
+        /* LinkedIn Button */
+        .linkedin-btn {
+            background: #0077b5;
+            color: white;
+        }
+        
+        .linkedin-btn:hover {
+            background: #005582;
+        }
+        
+        /* GitHub Button */
+        .github-btn {
+            background: #24292e;
+            color: white;
+        }
+        
+        .github-btn:hover {
+            background: #1a1e22;
+        }
+        
+        .dark-mode .github-btn {
+            background: #f6f8fa;
+            color: #24292e;
+        }
+        
+        .dark-mode .github-btn:hover {
+            background: #e1e4e8;
+        }
+
+        /* WhatsApp Button */
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            animation: whatsappPulse 2s infinite;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128c7e;
+            animation: none;
+        }
+        
+        @keyframes whatsappPulse {
+            0%, 100% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 0 rgba(37, 211, 102, 0.7);
+            }
+            50% {
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 0 0 10px rgba(37, 211, 102, 0);
+            }
+        }
+        
+        /* Dark mode adjustments */
+        .dark-mode .floating-btn {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        .dark-mode .floating-btn:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .floating-buttons {
+                bottom: 15px;
+                right: 15px;
+                gap: 10px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .floating-btn svg {
+                width: 20px;
+                height: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .floating-buttons {
+                bottom: 12px;
+                right: 12px;
+            }
+            
+            .floating-btn {
+                width: 46px;
+                height: 46px;
+            }
+            
+            .floating-btn svg {
+                width: 18px;
+                height: 18px;
+            }
+        }
     </style>
 </head>
 <body class="font-sans antialiased">
@@ -1019,15 +1357,71 @@
             <div class="slide" style="background-image: url('assets/img/slideshow/02.jpg');"></div>
         </div>
         
+        <!-- Floating Particles -->
+        <div class="particles-container">
+            <div class="particle"></div>
+            <div class="particle interactive"></div>
+            <div class="particle"></div>
+            <div class="particle interactive"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle interactive"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle interactive"></div>
+            
+            <!-- Tech Icon Particles -->
+            <div class="particle tech-icon">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z"/>
+                    <path d="M2 17L12 22L22 17"/>
+                    <path d="M2 12L12 17L22 12"/>
+                </svg>
+            </div>
+            
+            <div class="particle tech-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="3"/>
+                    <path d="M12 1V3"/>
+                    <path d="M12 21V23"/>
+                    <path d="M4.22 4.22L5.64 5.64"/>
+                    <path d="M18.36 18.36L19.78 19.78"/>
+                </svg>
+            </div>
+            
+            <div class="particle tech-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                    <line x1="8" y1="21" x2="16" y2="21"/>
+                    <line x1="12" y1="17" x2="12" y2="21"/>
+                </svg>
+            </div>
+        </div>
+        
         <div class="container mx-auto px-6 py-20 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
                 <h1 class="scroll-animate text-4xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in" style="font-family: 'Mokoto', sans-serif;">
                     A New Chapter Begins - CivoraTech Takes Off!
                 </h1>
-                <p class="scroll-animate scroll-animate-delay-2 text-2xl md:text-3xl font-semibold mb-10 text-green-300">
+                <p class="scroll-animate scroll-animate-delay-2 text-2xl md:text-3xl font-semibold mb-8 text-green-300">
                     "Connecting Citizens, Empowering Government."
                 </p>
-                <a href="#about" class="scroll-animate scroll-animate-delay-3 cta-button inline-block bg-white text-civora-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-green-100 transform hover:scale-105 transition duration-300 shadow-xl">
+                
+                <!-- Hero Powered By Section -->
+                <div class="scroll-animate scroll-animate-delay-3 mb-10">
+                    <p class="text-white/70 text-sm mb-4 font-medium tracking-wide uppercase">Powered By</p>
+                    <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8">
+                        <a href="https://www.icet.lk/" target="_blank" rel="noopener noreferrer" class="transform hover:scale-110 transition duration-300 group opacity-90 hover:opacity-100">
+                            <img src="assets/img/logos/iCET_logo.png" alt="ICET Logo" class="h-10 md:h-12 w-auto filter brightness-0 invert">
+                        </a>
+                        <div class="hidden sm:block w-px h-8 bg-white/30"></div>
+                        <a href="https://industryminds.lk/" target="_blank" rel="noopener noreferrer" class="transform hover:scale-110 transition duration-300 group opacity-90 hover:opacity-100">
+                            <img src="assets/img/logos/IndustryMinds_Logo.png" alt="IndustryMinds Logo" class="h-12 md:h-16 w-auto filter brightness-0 invert">
+                        </a>
+                    </div>
+                </div>
+                
+                <a href="#about" class="scroll-animate scroll-animate-delay-4 cta-button inline-block bg-white text-civora-blue px-8 py-4 rounded-full font-bold text-lg hover:bg-green-100 transform hover:scale-105 transition duration-300 shadow-xl">
                     Learn More
                 </a>
             </div>
@@ -1500,7 +1894,7 @@
                                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                                 </svg>
                             </a>
-                            <a href="https://github.com/CivoraTech" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-green-500 p-3 rounded-full transition duration-300 transform hover:scale-110" aria-label="GitHub">
+                            <a href="https://github.com/Civora-Tech" target="_blank" rel="noopener noreferrer" class="bg-white/10 hover:bg-green-500 p-3 rounded-full transition duration-300 transform hover:scale-110" aria-label="GitHub">
                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                                 </svg>
@@ -1544,6 +1938,37 @@
     
     </div>
     <!-- End Page Content Wrapper -->
+
+    <!-- Floating Action Buttons -->
+    <div class="floating-buttons">
+        <!-- Scroll to Top Button -->
+        <button id="scroll-to-top" class="floating-btn scroll-top-btn" aria-label="Scroll to top">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"/>
+            </svg>
+        </button>
+        
+        <!-- LinkedIn Button -->
+        <a href="https://www.linkedin.com/company/civora-tech" target="_blank" rel="noopener noreferrer" class="floating-btn linkedin-btn" aria-label="Follow us on LinkedIn">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+            </svg>
+        </a>
+        
+        <!-- GitHub Button -->
+        <a href="https://github.com/Civora-Tech" target="_blank" rel="noopener noreferrer" class="floating-btn github-btn" aria-label="Visit our GitHub">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+        </a>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/94706994177?text=Hello%20CivoraTech!%20I'm%20interested%20in%20your%20services." target="_blank" rel="noopener noreferrer" class="floating-btn whatsapp-btn" aria-label="Contact us on WhatsApp">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516z"/>
+            </svg>
+        </a>
+    </div>
 
     <!-- Mobile Menu Toggle and Dark Mode Script -->
     <script>
@@ -1731,6 +2156,102 @@
 
         // Set initial cursor style
         teamCarousel.style.cursor = 'grab';
+
+        // Floating Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scroll-to-top');
+        
+        // Show/hide scroll to top button based on scroll position
+        function toggleScrollTopButton() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('visible');
+            } else {
+                scrollToTopBtn.classList.remove('visible');
+            }
+        }
+        
+        // Smooth scroll to top functionality
+        scrollToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Listen for scroll events
+        window.addEventListener('scroll', toggleScrollTopButton);
+        
+        // Initial check
+        toggleScrollTopButton();
+
+        // Floating Particles Enhancement
+        function createAdditionalParticles() {
+            const particlesContainer = document.querySelector('.particles-container');
+            if (!particlesContainer) return;
+            
+            // Create additional random particles
+            for (let i = 0; i < 8; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random properties
+                const size = Math.random() * 4 + 2; // 2-6px
+                const left = Math.random() * 100; // 0-100%
+                const duration = Math.random() * 10 + 15; // 15-25s
+                const delay = Math.random() * 5; // 0-5s delay
+                
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                particle.style.left = left + '%';
+                particle.style.animationDuration = duration + 's';
+                particle.style.animationDelay = delay + 's';
+                
+                // Some particles get interactive behavior
+                if (Math.random() > 0.7) {
+                    particle.classList.add('interactive');
+                }
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+        
+        // Mouse interaction with particles
+        function addParticleInteraction() {
+            const heroSection = document.getElementById('home');
+            const particles = document.querySelectorAll('.particle');
+            
+            heroSection.addEventListener('mousemove', (e) => {
+                const { clientX, clientY } = e;
+                const { offsetWidth, offsetHeight } = heroSection;
+                
+                particles.forEach((particle, index) => {
+                    if (particle.classList.contains('interactive')) {
+                        const rect = particle.getBoundingClientRect();
+                        const particleX = rect.left + rect.width / 2;
+                        const particleY = rect.top + rect.height / 2;
+                        
+                        const distance = Math.sqrt(
+                            Math.pow(clientX - particleX, 2) + Math.pow(clientY - particleY, 2)
+                        );
+                        
+                        if (distance < 100) {
+                            const force = (100 - distance) / 100;
+                            const angle = Math.atan2(particleY - clientY, particleX - clientX);
+                            const moveX = Math.cos(angle) * force * 20;
+                            const moveY = Math.sin(angle) * force * 20;
+                            
+                            particle.style.transform += ` translate(${moveX}px, ${moveY}px)`;
+                            particle.style.opacity = Math.min(1, 0.4 + force * 0.6);
+                        }
+                    }
+                });
+            });
+        }
+        
+        // Initialize particles after page load
+        setTimeout(() => {
+            createAdditionalParticles();
+            addParticleInteraction();
+        }, 1000);
 
         // Disable right-click (context menu)
         document.addEventListener('contextmenu', (e) => {
